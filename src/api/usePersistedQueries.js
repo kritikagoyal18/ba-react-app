@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import aemHeadlessClient from "./aemHeadlessClient";
 
 const { REACT_APP_ENDPOINT } = process.env;
+const { REACT_APP_BA_ENDPOINT } = process.env;
 
 /**
  * This file contains the React useEffect custom hooks that:
@@ -251,6 +252,48 @@ export function useServices(first) {
 
     fetchData();
   }, [first]);
+
+  return { data, error };
+}
+
+/**
+ * Calls the 'flightpackage-by-id' persisted query with `packageId` and `variation` parameter.
+ *
+ * @param {String!} packageId the packageId for the package
+ * @param {String} variation the variation to request
+ * @returns a JSON object representing the Page
+ */
+export function useFlightPackageById(packageId, variation = "master", fetchTrigger) {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const queryVariables = {
+          packageId,
+          variation,
+        };
+  
+        const response = await fetchPersistedQuery(
+          REACT_APP_BA_ENDPOINT + "/flightpackage-by-id",
+          queryVariables
+        );
+  
+        if (response?.err) {
+          setError(response.err);
+        } else if (response?.data?.flightPackageList?.items?.length === 1) {
+          setData(response.data.flightPackageList.items[0]);
+        } else {
+            setData(null); // Optional: Reset data if no match
+        }
+      } catch (err) {
+        setError(err);
+      }
+    }
+
+    fetchData();
+  }, [packageId, variation, fetchTrigger]);
 
   return { data, error };
 }
