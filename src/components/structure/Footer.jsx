@@ -1,5 +1,4 @@
 import React, { useMemo } from "react";
-import Logo from "../Logo";
 import copyright from "../../assets/copyright.svg";
 import linkedinIcon from "../../assets/linkedin-icon.svg";
 import twitterIcon from "../../assets/twitter-icon.svg";
@@ -56,7 +55,6 @@ const Footer = () => {
     <footer>
       <div className="container footer">
         <div className="top-wrapper">
-          <Logo variant="dark" />
           <div className="categories-wrapper">
             {Object.keys(categories).map((category, index) => (
               <div key={`${category}_${index}`} className="category-wrapper">
@@ -80,7 +78,7 @@ const Footer = () => {
           <div className="rights-wrapper">
             <img src={copyright} alt="Copyright icon" className="icon" />
             <p className="font-size-large font-weight-regular">
-              2024 SecurBank. All right reserved
+              All right reserved
             </p>
           </div>
           <div className="social-media-wrapper">
