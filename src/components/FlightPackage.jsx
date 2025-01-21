@@ -14,10 +14,10 @@ const FlightPackage = ({ cf, navigate }) => {
   const packageId = cf?.packageId;
   const packagePrice = cf?.packagePrice;
   const highlight = cf?.highlight;
-  const bagsInfo = cf?.bagsInfo?.html;
-  const seatsInfo = cf?.seatsInfo?.html;
-  const refundInfo = cf?.refundInfo?.html;
-  const moreInformation = cf?.moreInformation?.html;
+  const bagsInfo = cf?.bagsInfo;
+  const seatsInfo = cf?.seatsInfo;
+  const refundInfo = cf?.refundInfo;
+  const moreInformation = cf?.moreInformation;
 
   return (
     <ContentFragment
