@@ -5,4 +5,5 @@ export {
   useArticles,
   useServices,
   useFlightPackageById,
+  useBAPageBySlug,
 } from "./usePersistedQueries";
