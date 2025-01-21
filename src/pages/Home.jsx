@@ -141,8 +141,9 @@ const Home = () => {
           ❯
         </button>
       </div>
-      </ContentFragment>
       <FlightBookingForm />
+      </ContentFragment>
+      
       <CallToActionSection />
     </>
   );

@@ -11,7 +11,7 @@ const Hero = ({ image, title, content }) => {
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
-      height: "651px",
+      height: "600px",
       width: "100%"
     }}>
       <div className="container hero-wrapper">

@@ -1,10 +1,9 @@
 .flight-booking-form {
-  background-color: #f8f8f8;
-  padding: 30px;
-  width: 70%; /* Increased width to 70% of the screen */
-  margin: 20px auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 175px;
+  top: -15rem;
+  position: relative;
+  background-color: #01122c;
 
   h2 {
     text-align: center;
@@ -13,6 +12,13 @@
   }
 
   form {
+    background-color: #f8f8f8;
+    padding: 30px;
+    width: 70%; /* Increased width to 70% of the screen */
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
     .form-group-row {
       display: flex;
       justify-content: space-between;
