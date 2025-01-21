@@ -3,12 +3,15 @@ import TeaserCard from "../components/TeaserCard";
 import { useChooseAFare } from "../api";
 import { useFlightPackageById } from "../api";
 import FlightPackage from "../components/FlightPackage";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import "./FlightList.scss";
 
  
 const FlightList = () => {
   const [fetchTrigger, setFetchTrigger] = useState(true);
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const [packages, setPackages] = useState([]);
  
   const fareTypes = [
     "economy-basic",
