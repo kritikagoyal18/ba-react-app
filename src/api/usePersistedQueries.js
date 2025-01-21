@@ -334,3 +334,34 @@ export function useBAPageBySlug(slug, variation = "master", fetchTrigger) {
   return { data, error };
 }
 
+export function useChooseAFare(variation = "master", fetchTrigger) {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function fetchData() {
+      const queryVariables = {
+        variation,
+      };
+
+      try {
+        const response = await fetchPersistedQuery(
+          REACT_APP_BA_ENDPOINT + "/choose-a-fare",
+          queryVariables
+        );
+        
+        if (response?.err) {
+          setError(response.err);
+        } else if (response?.data?.chooseAFareList?.items?.length >= 1) {
+          setData(response.data.chooseAFareList.items[0]);
+        }
+      } catch (e) {
+        setError(e.message);
+      }
+    }
+
+    fetchData();
+  }, [variation,fetchTrigger]);
+
+  return { data, error };
+}

@@ -1,6 +1,5 @@
 import React from "react";
 import Title from "./base/Title";
-import Image from "./base/Image";
 import Text from "./base/Text";
 import RedirectButton from "./RedirectButton";
 import "./Hero.scss";

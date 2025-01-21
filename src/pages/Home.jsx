@@ -2,13 +2,9 @@ import React, { useState, useEffect, useMemo } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import ContentFragment from "../components/base/ContentFragment";
 import Hero from "../components/Hero";
-import TeaserSection from "../components/TeaserSection";
 import CarouselItem from "../components/CarouselItem";
 
 import CallToActionSection from "../components/CallToActionSection";
-import phones from "../assets/phones.png";
-import { snakeCaseToTitleCase } from "../utils";
-import { usePageBySlug } from "../api";
 import { useBAPageBySlug } from "../api";
 import "./Home.scss";
 import "../components/CarouselItem.scss";

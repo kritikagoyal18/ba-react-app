@@ -10,6 +10,7 @@ import ArticleDetail from "./pages/ArticleDetail.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import { getURI } from "./utils";
 import "./App.scss";
+import FlightList from "./pages/FlightList.jsx";
 
 function App() {
   return (
@@ -34,6 +35,8 @@ function App() {
               <Route path="/articles/:slug" element={<ArticleDetail />} />
               <Route path="/services" element={<Services />} />
               <Route path="/services/:slug" element={<Services />} />
+              <Route path="/flightlist" element={<FlightList />} />
+              <Route path="/home" element={<Home />} />
               <Route path="/*" element={<NotFound />} />
             </Routes>
           </main>
