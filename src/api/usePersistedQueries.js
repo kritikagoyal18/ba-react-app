@@ -297,3 +297,40 @@ export function useFlightPackageById(packageId, variation = "master", fetchTrigg
 
   return { data, error };
 }
+
+/**
+ * Calls the 'page-by-slug' persisted query with `slug` and `variation` parameter.
+ *
+ * @param {String!} slug the page slug
+ * @param {String} variation the page variation
+ * @returns a JSON object representing the Page
+ */
+export function useBAPageBySlug(slug, variation = "master", fetchTrigger) {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function fetchData() {
+      const queryVariables = {
+        slug,
+        variation,
+      };
+
+      const response = await fetchPersistedQuery(
+        REACT_APP_BA_ENDPOINT + "/page-by-slug",
+        queryVariables
+      );
+
+      if (response?.err) {
+        setError(response.err);
+      } else if (response?.data?.homePageList?.items?.length === 1) {
+        setData(response.data.homePageList.items[0]);
+      }
+    }
+
+    fetchData();
+  }, [slug, variation, fetchTrigger]);
+
+  return { data, error };
+}
+
