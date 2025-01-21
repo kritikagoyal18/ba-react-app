@@ -1,0 +1,46 @@
+.item-tile {
+  background-color: white;
+  border-radius: 0.5rem;
+
+  .button {
+      padding-top: 14px;
+      padding-bottom: 14px;
+      outline-width: 1px;
+      width: 100%;
+      outline-style: solid;
+      margin: 20px 0px 20px 0px;
+      border-radius: 0.5rem;
+      color: rgb(44 87 145);
+  }
+
+  .text-style {
+      font-size: 0.75rem;
+      font-weight: 300;
+      margin-bottom: 2px;
+      font-family: Open Sans, sans-serif;
+  }
+
+  .mb-15 {
+      margin-bottom: 15px;
+  }
+
+  h3 {
+      height: 28px;
+      font-family: Mylius Modern, sans-serif;
+      font-weight: 300;
+  }
+
+  h4 {
+      font-size: 14px;
+  }
+
+  .price-text {
+      line-height: 2.25rem;
+      font-size: 1.25rem;
+  }
+
+  .price-pretext {
+      font-size: 0.75rem;
+      font-weight: 300;
+  }
+}
