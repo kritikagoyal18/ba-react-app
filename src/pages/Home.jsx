@@ -126,6 +126,7 @@ const Home = () => {
                 }`}
               >
                 <CarouselItem
+                  title="Carousel Item"
                   cf={offer}
                   setFetchTrigger={setFetchTrigger}
                 />
