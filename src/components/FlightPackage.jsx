@@ -57,7 +57,7 @@ const FlightPackage = ({ cf, navigate }) => {
                               <Text
                                     content={bagsInfo}
                                     prop="bagsInfo"
-                                    className="font-size-large price-text"
+                                    className="font-size-large info-text"
                               />
                             </div>
                         )}
@@ -67,7 +67,7 @@ const FlightPackage = ({ cf, navigate }) => {
                             <Text
                                   content={seatsInfo}
                                   prop="seatsInfo"
-                                  className="font-size-large price-text"
+                                  className="font-size-large info-text"
                             />
                           </div>
                         )}
@@ -77,7 +77,7 @@ const FlightPackage = ({ cf, navigate }) => {
                             <Text
                                   content={refundInfo}
                                   prop="refundInfo"
-                                  className="font-size-large price-text"
+                                  className="font-size-large info-text"
                             />
                           </div>
                         )}
@@ -86,7 +86,7 @@ const FlightPackage = ({ cf, navigate }) => {
                             <Text
                                   content={moreInformation}
                                   prop="moreInformation"
-                                  className="font-size-large price-text"
+                                  className="font-size-large info-text"
                             />
                           </div>
                         )}
