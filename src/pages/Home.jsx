@@ -8,6 +8,7 @@ import CallToActionSection from "../components/CallToActionSection";
 import { useBAPageBySlug } from "../api";
 import "./Home.scss";
 import "../components/CarouselItem.scss";
+import FlightBookingForm from "../components/FlightBookingForm";
 
 const Home = () => {
   const [fetchTrigger, setFetchTrigger] = useState(true);
@@ -141,6 +142,7 @@ const Home = () => {
         </button>
       </div>
       </ContentFragment>
+      <FlightBookingForm />
       <CallToActionSection />
     </>
   );
