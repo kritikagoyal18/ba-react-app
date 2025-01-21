@@ -40,10 +40,10 @@ const FlightList = () => {
 
   return (
     <>
-      <TeaserCard cf={data}>
+      <TeaserCard cf={data} title="Teaser">
       </TeaserCard>
       {packages.map((offer, index) => (
-        <FlightPackage
+        <FlightPackage title="Flight Package"
           key={offer.packageId || index}
           cf={offer}
           setFetchTrigger={setFetchTrigger}
