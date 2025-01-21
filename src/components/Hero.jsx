@@ -7,7 +7,13 @@ import "./Hero.scss";
 
 const Hero = ({ image, title, content }) => {
   return (
-    <div className="background-blue">
+    <div className="background-blue" style={{
+      backgroundImage: `url(${image})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+      minHeight: "651px"
+    }}>
       <div className="container hero-wrapper">
         <div className="content-button-wrapper">
           <div className="content-wrapper">
@@ -20,12 +26,6 @@ const Hero = ({ image, title, content }) => {
             Our Services
           </RedirectButton>
         </div>
-        <Image
-          src={image}
-          alt="Hero banner"
-          prop="image"
-          className="hover-effect"
-        />
       </div>
     </div>
   );
