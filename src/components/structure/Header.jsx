@@ -12,7 +12,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="background-blue">
+    <header className="">
       <div className="container header">
         <div className="navigations-wrapper">
           <nav>
@@ -20,7 +20,7 @@ const Header = () => {
               <a
                 key={`${href}_${index}`}
                 href={href}
-                className="font-size-xlarge font-weight-medium color-light hover-effect"
+                className="font-size-large font-weight-medium color-light hover-effect"
               >
                 {label}
               </a>

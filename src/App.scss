@@ -196,7 +196,7 @@ hr {
 }
 
 .icon {
-  width: 300px !important;
+  width: 250px !important;
   height: auto !important;
 
   all: initial;
@@ -236,6 +236,7 @@ hr {
 
 .content-button-wrapper {
   display: flex;
+  display: none;
   flex-direction: column;
   align-items: flex-start;
   gap: 40px;
@@ -265,7 +266,7 @@ hr {
 }
 
 .oneWorldLogo {
-    width: 160px !important;
+    width: 90px !important;
 }
 
 .bottom-wrapper .icon {

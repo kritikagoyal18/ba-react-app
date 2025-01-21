@@ -1,11 +1,17 @@
 @import "../../styles/variables";
 
 footer {
+  background-color: #01122c;
+
   .footer {
     display: flex;
     flex-direction: column;
     padding: 64px 140px;
     gap: 72px;
+
+    p {
+      color:#ffffff;
+    }
 
     .top-wrapper {
       display: flex;

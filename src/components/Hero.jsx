@@ -11,7 +11,8 @@ const Hero = ({ image, title, content }) => {
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
-      minHeight: "651px"
+      height: "651px",
+      width: "100%"
     }}>
       <div className="container hero-wrapper">
         <div className="content-button-wrapper">

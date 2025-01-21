@@ -25,12 +25,14 @@
 }
 
 .carousel {
+  top:-32rem;
   position: relative;
   width: 800px;
   margin: 0 auto;
   overflow: hidden;
-  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  border: 1px solid #ffffff;
 
   .carousel-inner {
     display: flex;
@@ -40,6 +42,17 @@
       min-width: 100%;
       text-align: center;
       position: relative;
+
+      .carousel-caption {
+        padding: 25px;
+        box-sizing: border-box;
+
+
+        p, div {
+          color:#ffffff;
+        }
+
+      }
 
       img {
         width: 100%;
@@ -69,12 +82,12 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
+    background: rgba(255, 255, 255, 0.85);
+    color: #000000;
     border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    border-radius: 7px;
+    width: 30px;
+    height: 30px;
     text-align: center;
     line-height: 40px;
     cursor: pointer;

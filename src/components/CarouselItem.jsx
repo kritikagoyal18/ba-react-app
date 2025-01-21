@@ -23,7 +23,7 @@ const CarouselItem = ({ cf, navigate }) => {
       <div
   className="carousel-caption"
   style={{ backgroundImage: `url(${image})` }}>
-        <Title heading="h5" prop="title" className="color-dark">
+        <Title heading="h5" prop="title" className="color-light">
           {title}
         </Title>
         <Text

@@ -64,7 +64,7 @@ const Footer = () => {
                     <a
                       key={`${href}_${index}`}
                       href={href}
-                      className="font-size-large font-weight-medium color-dark"
+                      className="font-size-large font-weight-medium color-light"
                     >
                       {label}
                     </a>
