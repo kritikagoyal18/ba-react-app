@@ -2,13 +2,16 @@ import React, { useState, useEffect, useMemo } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import ContentFragment from "../components/base/ContentFragment";
 import Hero from "../components/Hero";
-import SelectorButton from "../components/SelectorButton";
 import TeaserSection from "../components/TeaserSection";
+import CarouselItem from "../components/CarouselItem";
+
 import CallToActionSection from "../components/CallToActionSection";
 import phones from "../assets/phones.png";
 import { snakeCaseToTitleCase } from "../utils";
 import { usePageBySlug } from "../api";
+import { useBAPageBySlug } from "../api";
 import "./Home.scss";
+import "../components/CarouselItem.scss";
 
 const Home = () => {
   const [fetchTrigger, setFetchTrigger] = useState(true);
@@ -19,7 +22,19 @@ const Home = () => {
     [searchParams]
   );
 
-  const { data } = usePageBySlug("home", selectedVariation, fetchTrigger);
+  const { REACT_APP_HOST_URI } = process.env;
+
+  //const { data } = usePageBySlug("home", selectedVariation, fetchTrigger);
+  const { data } = useBAPageBySlug("home", selectedVariation, fetchTrigger);
+
+  /*
+  const flightPackages = useMemo(() => {
+    return fareTypes.map(fareType => {
+      const { flightpackagedata } = useFlightPackageById("flight-package", fareType, fetchTrigger);
+      return flightpackagedata;
+    });
+  }, [fareTypes, fetchTrigger]);
+  
 
   const categories = useMemo(() => {
     const map = { master: "Personal Banking" };
@@ -31,12 +46,15 @@ const Home = () => {
     }
     return map;
   }, [data?._variations]);
+*/
 
   useEffect(() => {
     if (!searchParams.get("variation")) {
       navigate("/?variation=master");
     }
   }, [searchParams, navigate]);
+
+      /*
 
   useEffect(() => {
     const scrollHandler = () => {
@@ -64,42 +82,68 @@ const Home = () => {
       document.removeEventListener("aue:content-update", updateHandler);
     };
   }, []);
+  */
 
-  if (!data || !categories.hasOwnProperty(selectedVariation)) return;
-
+  //if (!data || !categories.hasOwnProperty(selectedVariation)) return;
+/*
   const image = data?.image?._dynamicUrl;
   const title = data?.title;
   const content = data?.content;
   const featuredServices = data?.featuredServices;
+*/
+
+  const image = REACT_APP_HOST_URI + data?.image?._path;
+  const title = data?.title;
+  const slug = data?.slug;
+  const content = data?.content;
+  const offers = data?.offers;
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % offers.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? offers.length - 1 : prevIndex - 1
+    );
+  };
 
   return (
     <>
       <ContentFragment cf={data}>
-        <div className="background-blue">
-          <div className="container variations-wrapper">
-            {Object.entries(categories).map(([variation, label], index) => (
-              <SelectorButton
-                key={`${variation}_${index}`}
-                variant="light"
-                onClick={() => navigate(`/?variation=${variation}`)}
-                isSelected={selectedVariation === variation}
+        <Hero image={image} title={title} content={content} />
+        <div className="carousel">
+          <div
+            className="carousel-inner"
+            style={{
+              transform: `translateX(-${currentIndex * 100}%)`,
+            }}
+          >
+            {offers?.map((offer, index) => (
+              <div
+                key={offer.title}
+                className={`carousel-item ${
+                  index === currentIndex ? "active" : ""
+                }`}
               >
-                {label}
-              </SelectorButton>
+                <CarouselItem
+                  cf={offer}
+                  setFetchTrigger={setFetchTrigger}
+                />
+              </div>
             ))}
           </div>
-        </div>
-        <Hero image={image} title={title} content={content} />
-        <img src={phones} id="parallax-item" alt="Phone" />
-        <TeaserSection
-          cfs={featuredServices}
-          title="Featured Services"
-          containerProps={{
-            prop: "featuredServices",
-            label: "Featured Services",
-          }}
-          setFetchTrigger={setFetchTrigger}
-        />
+
+        {/* Navigation Buttons */}
+        <button className="carousel-control prev" onClick={handlePrev}>
+          ❮
+        </button>
+        <button className="carousel-control next" onClick={handleNext}>
+          ❯
+        </button>
+      </div>
       </ContentFragment>
       <CallToActionSection />
     </>
