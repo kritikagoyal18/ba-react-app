@@ -39,6 +39,12 @@ const Text = ({ children, content, className, prop, label, behavior }) => {
         dangerouslySetInnerHTML={{ __html: fixImagePaths(content.html, getURI(""))}}
       />
     );
+  }else {
+    Component = (
+      <div {...editorProps} data-aue-type="text" className={className}>
+        {content}
+      </div>
+    );
   }
 
   return Component;
