@@ -27,7 +27,7 @@ const FlightPackage = ({cf, navigate}) => {
         >
             <div className={`item-tile ${highlight ? 'highlight-class' : ''}`}>
                 <div className="flex-grow" style={{minHeight: '445px'}}>
-                    {packageImage && (
+                    {packageImage?.trim() && (
                         <Image className="package-image" src={packageImage} alt={`${packageTitle} illustration`}
                                prop="packageImage"/>
                     )}
@@ -47,7 +47,7 @@ const FlightPackage = ({cf, navigate}) => {
                                 <p className="price-pretext">per adult</p>
                             </div>
                         </div>
-                        {bagsInfo && (
+                        {bagsInfo?.trim() && (
                             <div class="flex flex-col mb-15">
                                 <h4> Bags</h4>
                                 <Text
@@ -57,7 +57,7 @@ const FlightPackage = ({cf, navigate}) => {
                                 />
                             </div>
                         )}
-                        {seatsInfo && (
+                        {seatsInfo?.trim() && (
                             <div class="flex flex-col mb-15">
                                 <h4>Seats</h4>
                                 <Text
@@ -67,7 +67,7 @@ const FlightPackage = ({cf, navigate}) => {
                                 />
                             </div>
                         )}
-                        {refundInfo && (
+                        {refundInfo?.trim() && (
                             <div class="flex flex-col mb-15">
                                 <h4>Changes and refunds</h4>
                                 <Text
@@ -77,7 +77,7 @@ const FlightPackage = ({cf, navigate}) => {
                                 />
                             </div>
                         )}
-                        {moreInformation && (
+                        {moreInformation?.trim() && (
                             <div class="flex flex-col mb-15">
                                 <Text
                                     content={moreInformation}
