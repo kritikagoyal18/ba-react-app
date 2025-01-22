@@ -16,6 +16,13 @@ const Text = ({ children, content, className, prop, label, behavior }) => {
   }
 
   let Component = null;
+  if(!children && typeof content === "string") {
+    Component = (
+        <div {...editorProps} data-aue-type="text" className={className}>
+          {content}
+        </div>
+    );
+  }
 
   if (children || content?.plaintext) {
     Component = (

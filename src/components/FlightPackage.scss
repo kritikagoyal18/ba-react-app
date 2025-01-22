@@ -87,6 +87,12 @@
       width: auto;
     }
   }
+  .enable-bullets {
+    ul {
+      list-style-type: unset;
+      margin-left: 15px;
+    }
+  }
   .flex-grow {
     flex-grow: 1;
   }
