@@ -1,3 +1,5 @@
+
+@import "../styles/fonts";
 @import "../styles/variables";
 
 #parallax-item {
@@ -47,6 +49,13 @@
         padding: 25px;
         box-sizing: border-box;
 
+        h5.color-light {
+          font-size: 40px;
+          font-weight: 400;
+          line-height: 100px;
+          font-family: $font-family-mylius-keyline;
+          text-transform: uppercase;
+        }
 
         p, div {
           color:#ffffff;

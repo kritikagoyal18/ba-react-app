@@ -13,7 +13,7 @@ body {
 
   background-color: $color-grey-0;
   color: $color-grey-400;
-  font-family: $font-family-inter-tight;
+  font-family: $font-family-mylius-modern;
   font-size: $font-size-xlarge;
   font-weight: $font-weight-regular;
   font-style: normal;
@@ -180,13 +180,12 @@ ul {
 }
 
 img {
-  width: 500px;
-  height: 450px;
+  //width: 500px;
+  //height: 450px;
   object-fit: cover;
   object-position: center;
-
-  border-radius: 16px;
-  border: 1px solid $color-grey-100;
+  border-radius: 0;
+  border: none;
 }
 
 hr {
