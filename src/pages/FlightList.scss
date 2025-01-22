@@ -3,3 +3,70 @@
   gap: 10px;
   margin: 10px 0;
 }
+.progress-list {
+    margin-left: 80px !important;
+    margin-right: 80px !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 2rem 0;
+    position: relative;
+    list-style: none;
+  }
+  
+  .progress-list::before {
+    content: '';
+    position: absolute;
+    top: 50%; /* Center the line vertically relative to the items */
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #e0e0e0;
+    z-index: 1;
+  }
+  
+  /* Individual step items */
+  .progress-step {
+    position: relative;
+    z-index: 2; /* Place items above the line */
+    display: flex;
+    align-items: center;
+    color: #007bff;
+    font-size : 17px;
+    font-weight: 300;
+  }
+  
+  /* Circle containing the number */
+  .progress-step span {
+    display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #fff;
+        border: 1px solid #007bff;
+        /* font-weight: bold; */
+        margin-right: 10px;
+  }
+  
+  /* Text next to the circle */
+  .progress-step::after {
+    content: attr(data-label); /* Dynamic labels (optional) */
+    font-size: 14px;
+    color: #555;
+    white-space: nowrap;
+  }
+  
+  /* Adjust the connecting line around each step */
+  .progress-step:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -50%; /* Half of the width to connect the next step */
+    width: 100%;
+    height: 2px;
+    background: #e0e0e0;
+    z-index: 1;
+  }
