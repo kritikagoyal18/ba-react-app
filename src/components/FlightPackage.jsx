@@ -47,7 +47,7 @@ const FlightPackage = ({cf, navigate}) => {
                                 <p className="price-pretext">per adult</p>
                             </div>
                         </div>
-                        {bagsInfo?.trim() && (
+                        {bagsInfo && (
                             <div class="flex flex-col mb-15">
                                 <h4> Bags</h4>
                                 <Text
@@ -57,7 +57,7 @@ const FlightPackage = ({cf, navigate}) => {
                                 />
                             </div>
                         )}
-                        {seatsInfo?.trim() && (
+                        {seatsInfo && (
                             <div class="flex flex-col mb-15">
                                 <h4>Seats</h4>
                                 <Text
@@ -67,7 +67,7 @@ const FlightPackage = ({cf, navigate}) => {
                                 />
                             </div>
                         )}
-                        {refundInfo?.trim() && (
+                        {refundInfo && (
                             <div class="flex flex-col mb-15">
                                 <h4>Changes and refunds</h4>
                                 <Text
@@ -77,7 +77,7 @@ const FlightPackage = ({cf, navigate}) => {
                                 />
                             </div>
                         )}
-                        {moreInformation?.trim() && (
+                        {moreInformation && (
                             <div class="flex flex-col mb-15">
                                 <Text
                                     content={moreInformation}
