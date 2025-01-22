@@ -29,6 +29,21 @@ const FlightList = () => {
 
   return (
       <>
+        <ol className="progress-list">
+            <li className="progress-step"><span>1</span>Outbound</li>
+            <li className="progress-step"><span>2</span>Flight summary Incomplete.
+            </li>
+            <li className="progress-step"><span>3</span>Seats</li>
+            <li className="progress-step"><span>4</span>Passengers details Incomplete.
+            </li>
+            <li className="progress-step"><span>5</span>Passengers details
+            Incomplete.
+            </li>
+            <li className="progress-step"><span>6</span>Extras
+            </li>
+            <li className="progress-step"><span>7</span>Review and pay
+            </li>
+        </ol>
         <TeaserCard cf={data} title="Teaser"/>
         <div className="column-container">
           {getAllPackages()}

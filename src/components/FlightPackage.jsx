@@ -13,8 +13,8 @@ const FlightPackage = ({cf, navigate}) => {
 
     const packageImage = cf?.packageImage?._path;
     const packageTitle = cf?.packageTitle;
-    const packageId = cf?.packageId;
     const packagePrice = cf?.packagePrice;
+    const packageId = cf?.packageId;
     const highlight = cf?.highlight;
     const bagsInfo = cf?.bagsInfo;
     const seatsInfo = cf?.seatsInfo;
@@ -48,7 +48,7 @@ const FlightPackage = ({cf, navigate}) => {
                             </div>
                         </div>
                         {bagsInfo?.html && (
-                            <div class="flex flex-col mb-15">
+                            <div className="flex flex-col mb-15">
                                 <h4> Bags</h4>
                                 <Text
                                     content={bagsInfo}
@@ -58,7 +58,7 @@ const FlightPackage = ({cf, navigate}) => {
                             </div>
                         )}
                         {seatsInfo?.html && (
-                            <div class="flex flex-col mb-15">
+                            <div className="flex flex-col mb-15">
                                 <h4>Seats</h4>
                                 <Text
                                     content={seatsInfo}
@@ -68,7 +68,7 @@ const FlightPackage = ({cf, navigate}) => {
                             </div>
                         )}
                         {refundInfo?.html && (
-                            <div class="flex flex-col mb-15">
+                            <div className="flex flex-col mb-15">
                                 <h4>Changes and refunds</h4>
                                 <Text
                                     content={refundInfo}
@@ -78,11 +78,11 @@ const FlightPackage = ({cf, navigate}) => {
                             </div>
                         )}
                         {moreInformation?.html && (
-                            <div class="flex flex-col mb-15">
+                            <div className="flex flex-col mb-15">
                                 <Text
                                     content={moreInformation}
                                     prop="moreInformation"
-                                    className="font-size-large info-text with-icons"
+                                    className="font-size-large info-text with-icons enable-bullets"
                                 />
                             </div>
                         )}
