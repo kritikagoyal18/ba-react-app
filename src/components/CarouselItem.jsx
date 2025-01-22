@@ -31,8 +31,16 @@ const CarouselItem = ({ cf, navigate }) => {
           prop="description"
           className="font-size-large"
         />
-        <p className="carousel-price">{price}</p>
-        <p>{cta}</p>
+        <Text
+          content={price}
+          prop="price"
+          className="font-size-large carousel-price"
+        />
+        <Text
+          content={cta}
+          prop="cta"
+          className="font-size-large cta-button"
+        />
         <p>{ctalink}</p>
       </div>
     </ContentFragment>
