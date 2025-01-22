@@ -1,12 +1,19 @@
-import React, { useState } from "react";
+import React, {useCallback, useState} from "react";
+import { useNavigate } from "react-router-dom";
 import "./FlightBookingForm.scss";
 
 const FlightBookingForm = () => {
   const [tripType, setTripType] = useState("one-way");
+  const navigate = useNavigate();
+
+  const handleSubmit = useCallback((e) => {
+    e.preventDefault();
+    navigate("/flightlist", {});
+  }, [navigate]);
 
   return (
     <div className="flight-booking-form">
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="form-group-row">
           <div className="form-group">
             <label htmlFor="tripType">Fare</label>
@@ -44,12 +51,12 @@ const FlightBookingForm = () => {
             <label htmlFor="departureDate">Depart</label>
             <input type="date" id="departureDate" required />
           </div>
-          
+
             <div className="form-group">
               <label htmlFor="returnDate">Return</label>
               <input type="date" id="returnDate" required />
             </div>
-          
+
           <div className="form-group">
             <label htmlFor="travelClass">Travel Class</label>
             <select id="travelClass">
@@ -70,7 +77,7 @@ const FlightBookingForm = () => {
           </div>
         </div>
 
-        <button type="button" className="find-flights-button">
+        <button type="submit" className="find-flights-button">
           Find Flights
         </button>
       </form>

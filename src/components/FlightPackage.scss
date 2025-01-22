@@ -1,16 +1,45 @@
 .item-tile {
   background-color: white;
   border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+  border: 1px solid;
 
-  .button {
-      padding-top: 14px;
-      padding-bottom: 14px;
-      outline-width: 1px;
-      width: 100%;
-      outline-style: solid;
-      margin: 20px 0px 20px 0px;
-      border-radius: 0.5rem;
-      color: rgb(44 87 145);
+  &, & > * {
+    box-sizing: border-box;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+
+  .content-container {
+    padding: 20px;
+  }
+
+  .select-button {
+    width: 50%;
+    margin: 20px 0;
+    padding: 10px 15px;
+    background: none;
+    border: 1px solid #0077cc;
+    color: #0077cc;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background: #0077cc;
+      color: #fff;
+    }
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
   }
 
   .text-style {
@@ -25,7 +54,6 @@
   }
 
   h3 {
-      height: 28px;
       font-family: Mylius Modern, sans-serif;
       font-weight: 300;
   }
@@ -38,7 +66,7 @@
       line-height: 2.25rem;
       font-size: 1.25rem;
   }
-  
+
   .info-text {
     line-height: 2.25rem;
     font-size: 0.9rem;
@@ -47,5 +75,37 @@
   .price-pretext {
       font-size: 0.75rem;
       font-weight: 300;
+  }
+  .with-icons {
+    img {
+      border: none;
+
+      display: inline-block;
+      margin-right: 5px;
+      vertical-align: middle;
+      height: 16px;
+      width: auto;
+    }
+  }
+  .flex-grow {
+    flex-grow: 1;
+  }
+  .package-image {
+    width: 100%;
+    height: 175px;
+    border: none;
+    object-position: top;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &.highlight-class {
+    background-color: #3468ad;
+    color: white;
+
+    .select-button {
+      border-color: white;
+      color: white;
+    }
   }
 }

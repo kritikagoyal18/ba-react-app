@@ -1,60 +1,40 @@
-import React, { useState, useEffect, useMemo } from "react";
-import TeaserCard from "../components/TeaserCard";
-import { useChooseAFare } from "../api";
-import { useFlightPackageById } from "../api";
-import FlightPackage from "../components/FlightPackage";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import React, {useMemo, useState} from "react";
+import {useNavigate} from "react-router-dom";
+import {useChooseAFare, useFlightPackageById} from "../api";
 import "./FlightList.scss";
+import TeaserCard from "../components/TeaserCard";
+import FlightPackage from "../components/FlightPackage";
 
- 
+
 const FlightList = () => {
   const [fetchTrigger, setFetchTrigger] = useState(true);
   const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
-  const [packages, setPackages] = useState([]);
- 
-  const fareTypes = [
-    "economy-basic",
-    "business"
-  ];
 
-  // Individual hooks for each fare type
-  const economyBasicPackage = useFlightPackageById("economy-basic", 'master', fetchTrigger);
-  const businessPackage = useFlightPackageById("business", 'master', fetchTrigger);
+  const economyBasicPackage = useFlightPackageById("economy-basic", "master", fetchTrigger);
+  const businessPackage = useFlightPackageById("business", "master", fetchTrigger);
 
-  // Combine results in useEffect
-  useEffect(() => {
-    const allPackages = [
-      economyBasicPackage.data,
-      businessPackage.data
-    ].filter(data => data !== null);
-    
-    setPackages(allPackages);
-  }, [economyBasicPackage.data, businessPackage.data]);
+  const packages = [economyBasicPackage, businessPackage];
+  const {data} = useChooseAFare("master", fetchTrigger);
 
-  useEffect(() => {
-    if (!searchParams.get("variation")) {
-      navigate("/?variation=master");
-    }
-  }, [searchParams, navigate]);
- 
-  const { data } = useChooseAFare("master", fetchTrigger);
-  console.log("0", data);
+  function getAllPackages() {
+    return packages.map((offer, index) => (
+        <FlightPackage
+            key={offer?.packageId || index}
+            cf={offer?.data}
+            navigate={navigate}
+        />
+    ));
+  }
+
 
   return (
-    <>
-      <TeaserCard cf={data} title="Teaser">
-      </TeaserCard>
-      {packages.map((offer, index) => (
-        <FlightPackage title="Flight Package"
-          key={offer.packageId || index}
-          cf={offer}
-          setFetchTrigger={setFetchTrigger}
-        />
-      ))}
-    </>
+      <>
+        <TeaserCard cf={data} title="Teaser"/>
+        <div className="column-container">
+          {getAllPackages()}
+        </div>
+      </>
   );
-
-}
+};
 
 export default FlightList;
