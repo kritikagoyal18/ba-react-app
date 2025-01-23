@@ -15,10 +15,14 @@ const FlightList = () => {
     const [fetchTrigger, setFetchTrigger] = useState(true);
     const navigate = useNavigate();
 
-    const economyBasicPackage = useFlightPackageById("economy-basic", "master", fetchTrigger);
-    const businessPackage = useFlightPackageById("business", "master", fetchTrigger);
+  const economyBasicPackage = useFlightPackageById("flight-package", "economy-basic", fetchTrigger);
+  const businessPackage = useFlightPackageById("flight-package", "business", fetchTrigger);
+  const economySemiFlexPackage = useFlightPackageById("flight-package", "economy-semi-flex", fetchTrigger);
+  const economyFullyFlexPackage = useFlightPackageById("flight-package", "economy-fully-flex", fetchTrigger);
 
-    const packages = [economyBasicPackage, businessPackage];
+
+  const packages = [economyBasicPackage, businessPackage, economySemiFlexPackage, economyFullyFlexPackage];
+    
     const {data} = useChooseAFare("master", fetchTrigger);
 
     function getAllPackages() {
