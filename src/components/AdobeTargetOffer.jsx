@@ -34,7 +34,7 @@ const AdobeTargetOffer = () => {
                 
                   mboxes.forEach(el => {
                     window.adobe.target.applyOffers({
-                      selector: "#cf-offer",
+                      selector: "#reactapp-mbox",
                       response: {
                         prefetch: {
                           mboxes: [el]
@@ -75,7 +75,7 @@ const AdobeTargetOffer = () => {
   
     }, []); // Empty dependency array ensures this runs only once when the component mounts
  
-    return <div id="cf-offer">Loading offer...</div>;
+    return <div id="reactapp-mbox">Loading offer...</div>;
 };
 
 export default AdobeTargetOffer;
