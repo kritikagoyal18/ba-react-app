@@ -12,23 +12,30 @@ const AdobeTargetOffer = () => {
 
         // Function to fetch and render the offer
         const fetchAndRenderOffer = () => {
+            console.log("fetching offer");
+
             window.adobe.target.getOffer({
-                mbox: "target-global-mbox", // Replace with your mbox name
-                params: { key1: "value1", key2: "value2" }, // Optional custom parameters
-                success: (offer) => {
-                    window.adobe.target.applyOffer({
-                        mbox: "target-global-mbox",
-                        offer: offer,
-                    });
+                "mbox": "target-global-mbox",
+                "params": {
+                   "a": 1,
+                   "b": 2,
+                   "profile.age": 27,
+                   "profile.gender": "male"
                 },
-                error: (status, error) => {
+                "success": function(offer) {
+                    window.adobe.target.applyOffer( {
+                         "mbox": "target-global-mbox",
+                         "offer": offer
+                      } );
+                },
+                "error": function(status, error) {
                     console.error("Failed to fetch offer:", status, error);
-                },
-            });
+                }
+              });
         };
 
         // Fetch and render the offer when the component mounts
-        fetchAndRenderOffer();
+        setTimeout(fetchAndRenderOffer, 2000);
     }, []); // Empty dependency array ensures this runs only once when the component mounts
 
     return <div id="target-global-mbox">Loading offer...</div>;
