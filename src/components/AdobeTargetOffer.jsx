@@ -24,7 +24,7 @@ const AdobeTargetOffer = () => {
                 },
                 "success": function(offer) {
 
-                    console.log(offer);
+                    console.log("Offer recieved", offer);
                     /*
                     window.adobe.target.applyOffer( {
                          "mbox": "target-global-mbox",
