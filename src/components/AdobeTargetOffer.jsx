@@ -48,8 +48,8 @@ const AdobeTargetOffer = () => {
                         console.log("Short Description (HTML):", shortDescriptionHtml);
 
                        // document.getElementById("reactapp-mbox").innerHTML = "<img src="+'https://publish-p148716-e1519766.adobeaemcloud.com/'+imagePath+" />";
-                        const offerHtml = `
-                        <div style="
+                        const offerHtml = '
+                            <div style="
                             display: flex;
                             flex-direction: row;
                             align-items: center;
@@ -92,8 +92,7 @@ const AdobeTargetOffer = () => {
                                     ${ctaButtonText}
                                 </button>
                             </div>
-                        </div>
-                    `;
+                        </div>';
 
                     // Set the HTML inside the div
                     const mboxDiv = document.getElementById('reactapp-mbox');
