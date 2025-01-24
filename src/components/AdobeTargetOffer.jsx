@@ -46,6 +46,9 @@ const AdobeTargetOffer = () => {
                         console.log("Title:", title);
                         console.log("CTAButtonText:", ctaButtonText);
                         console.log("Short Description (HTML):", shortDescriptionHtml);
+
+                        document.getElementById("reactapp-mbox").innerHTML = "<img src="+'https://publish-p148716-e1519766.adobeaemcloud.com/'+imagePath+" />";
+                      
                     } else {
                         console.error("Could not find the required item in the JSON response.");
                     }
