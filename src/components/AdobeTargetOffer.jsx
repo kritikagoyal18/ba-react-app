@@ -59,24 +59,24 @@ const AdobeTargetOffer = () => {
                             border-radius: 8px;
                             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                             margin-bottom: 20px;">
-                            <div style="flex: 1; max-width: 300px; margin-right: 20px;">
+                            <div style="flex: 1; max-width: 300px; margin-right: 20px;" class="fl-1">
                                 <img 
                                     src="https://publish-p148716-e1519766.adobeaemcloud.com${imagePath}"
                                     alt="${title}" 
-                                    style="width: 100%; border-radius: 8px;" 
+                                    style="width: 100%; border-radius: 8px;"  class="fl-2-img"
                                 />
                             </div>
-                            <div style="flex: 2;">
-                                <p style="font-style: italic; color: #666; margin-bottom: 10px;">
+                            <div style="flex: 2;" class="fl-2">
+                                <div style="font-style: italic; color: #666; margin-bottom: 10px;" class="fl-2-pretitle">
                                     ${prattle}
-                                </p>
-                                <h1 style="font-size: 24px; font-weight: bold; color: #333; margin-bottom: 10px;">
+                                </div>
+                                <h1 style="font-size: 24px; font-weight: bold; color: #333; margin-bottom: 10px;" class="fl-2-heading">
                                     ${title}
                                 </h1>
-                                <div style="margin-bottom: 10px; color: #555; line-height: 1.5;">
+                                <div style="margin-bottom: 10px; color: #555; line-height: 1.5;" class="fl-2-desc">
                                     ${descriptionHtml}
                                 </div>
-                                <div style="margin-bottom: 20px; color: #555; line-height: 1.5;">
+                                <div style="margin-bottom: 20px; color: #555; line-height: 1.5;" class="fl-2-sdesc">
                                     ${shortDescriptionHtml}
                                 </div>
                                 <button 
@@ -88,7 +88,7 @@ const AdobeTargetOffer = () => {
                                         border-radius: 4px;
                                         font-size: 16px;
                                         cursor: pointer;
-                                        text-transform: uppercase;">
+                                        text-transform: uppercase;"  class="fl-2-btn">
                                     ${ctaButtonText}
                                 </button>
                             </div>
