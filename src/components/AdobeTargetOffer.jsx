@@ -55,12 +55,7 @@ const AdobeTargetOffer = () => {
                             display: flex;
                             flex-direction: row;
                             align-items: center;
-                            padding: 20px;
-                            background-color: #f9f9f9;
-                            border: 1px solid #ddd;
-                            border-radius: 8px;
-                            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                            margin-bottom: 20px;">
+                            padding: 20px;">
                             <div style="flex: 1; margin-right: 20px;" class="fl-1">
                                 <img 
                                     src="https://publish-p148716-e1519766.adobeaemcloud.com${imagePath}"
@@ -69,26 +64,20 @@ const AdobeTargetOffer = () => {
                                 />
                             </div>
                             <div style="flex: 2;" class="fl-2">
-                                <div style="font-style: italic; color: #666; margin-bottom: 10px;" class="fl-2-pretitle">
+                                <div style="font-style: italic; margin-bottom: 10px;" class="fl-2-pretitle">
                                     ${prattle}
                                 </div>
-                                <h1 style="font-size: 24px; font-weight: bold; color: #333; margin-bottom: 10px;" class="fl-2-heading">
+                                <h1 style="font-size: 24px; font-weight: bold; margin-bottom: 10px;" class="fl-2-heading">
                                     ${title}
                                 </h1>
-                                <div style="margin-bottom: 10px; color: #555; line-height: 1.5;" class="fl-2-desc">
+                                <div style="margin-bottom: 10px; line-height: 1.5;" class="fl-2-desc">
                                     ${descriptionHtml}
                                 </div>
-                                <div style="margin-bottom: 20px; color: #555; line-height: 1.5;" class="fl-2-sdesc">
+                                <div style="margin-bottom: 20px; line-height: 1.5;" class="fl-2-sdesc">
                                     ${shortDescriptionHtml}
                                 </div>
                                 <button 
                                     style="
-                                        padding: 10px 20px;
-                                        background-color: #007bff;
-                                        color: #fff;
-                                        border: none;
-                                        border-radius: 4px;
-                                        font-size: 16px;
                                         cursor: pointer;
                                         text-transform: uppercase;"  class="fl-2-btn">
                                     ${ctaButtonText}
