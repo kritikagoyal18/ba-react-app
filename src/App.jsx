@@ -21,6 +21,10 @@ function App() {
             src="https://universal-editor-service.experiencecloud.live/corslib/LATEST"
             async
           />
+           <script
+            src="https://publish-p148716-e1519766.adobeaemcloud.com/content/dam/british-airways/at.js"
+            async
+          />
           <meta
             name="urn:adobe:aue:system:aemconnection"
             content={`aem:${getURI()}`}
