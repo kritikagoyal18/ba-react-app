@@ -19,6 +19,10 @@ const AdobeTargetOffer = () => {
                   request: {
                     prefetch: {
                       mboxes: [
+                          {
+                                index: 0,
+                                name: "reactapp-mbox"
+                          }
                       ]
                     }
                   }
