@@ -99,9 +99,10 @@ const AdobeTargetOffer = () => {
                     const mboxDiv = document.getElementById('reactapp-mbox');
                     if (mboxDiv) {
                         mboxDiv.innerHTML = offerHtml;
-                    } }else {
+                    } 
+                  }else {
                         console.error("Could not find the required item in the JSON response.");
-                    }
+                }
 
                     /*
                   const mboxes = response.prefetch.mboxes;
