@@ -14,6 +14,36 @@ const AdobeTargetOffer = () => {
         const fetchAndRenderOffer = () => {
             console.log("fetching offer");
 
+            adobe.target.getOffers({
+              request: {
+                prefetch: {
+                  mboxes: [
+                    {
+                      index: 0,
+                      name: "target-global-mbox"
+                    }
+                  ]
+                }
+              }
+            })
+            .then(response => {
+              // get all mboxes from response
+              const mboxes = response.prefetch.mboxes;
+              let count = 1;
+            
+              mboxes.forEach(el => {
+                adobe.target.applyOffers({
+                  selector: "#cf-offer",
+                  response: {
+                    prefetch: {
+                      mboxes: [el]
+                    }
+                  }
+                });
+              });
+            });
+
+            /*
             window.adobe.target.getOffer({
                 "mbox": "target-global-mbox",
                 "params": {
@@ -25,18 +55,19 @@ const AdobeTargetOffer = () => {
                 "success": function(offer) {
 
                     console.log("Offer recieved", offer);
-                    /*
+                    
                     window.adobe.target.applyOffer( {
                          "mbox": "target-global-mbox",
                          "offer": offer
                     } );
-                    */
+                    
 
                 },
                 "error": function(status, error) {
                     console.error("Failed to fetch offer:", status, error);
                 }
               });
+            */
         };
 
         // Fetch and render the offer when the component mounts
