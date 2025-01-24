@@ -61,7 +61,7 @@ const AdobeTargetOffer = () => {
                             margin-bottom: 20px;">
                             <div style="flex: 1; max-width: 300px; margin-right: 20px;">
                                 <img 
-                                    src=https://publish-p148716-e1519766.adobeaemcloud.com/"${title}"
+                                    src="https://publish-p148716-e1519766.adobeaemcloud.com${imagePath}"
                                     alt="${title}" 
                                     style="width: 100%; border-radius: 8px;" 
                                 />
