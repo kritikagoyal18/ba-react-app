@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 
 const AdobeTargetOffer = () => {
     useEffect(() => {
+    
         // Ensure Adobe Target is available
         if (!window.adobe || !window.adobe.target) {
             console.error("Adobe Target is not initialized.");
@@ -13,8 +14,10 @@ const AdobeTargetOffer = () => {
         // Function to fetch and render the offer
         const fetchAndRenderOffer = () => {
             console.log("fetching offer");
-
-            adobe.target.getOffers({
+            
+            
+            
+            window.adobe.target.getOffers({
               request: {
                 prefetch: {
                   mboxes: [
@@ -32,7 +35,7 @@ const AdobeTargetOffer = () => {
               let count = 1;
             
               mboxes.forEach(el => {
-                adobe.target.applyOffers({
+                window.adobe.target.applyOffers({
                   selector: "#cf-offer",
                   response: {
                     prefetch: {
@@ -42,8 +45,9 @@ const AdobeTargetOffer = () => {
                 });
               });
             });
-
-            /*
+            
+           /*
+            
             window.adobe.target.getOffer({
                 "mbox": "target-global-mbox",
                 "params": {
@@ -67,11 +71,12 @@ const AdobeTargetOffer = () => {
                     console.error("Failed to fetch offer:", status, error);
                 }
               });
-            */
+            
         };
-
+        */
         // Fetch and render the offer when the component mounts
         setTimeout(fetchAndRenderOffer, 2000);
+  
     }, []); // Empty dependency array ensures this runs only once when the component mounts
 
     return <div id="cf-offer">Loading offer...</div>;
