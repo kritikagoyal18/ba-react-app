@@ -12,7 +12,7 @@ const AdobeTargetOffer = () => {
                     console.error("Adobe Target is not initialized.");
                     return;
                 } else{
-                  console.error("Adobe Target is initialized.");
+                  console.log("Adobe Target is initialized.");
                 }
                 
                 window.adobe.target.getOffers({
@@ -36,6 +36,7 @@ const AdobeTargetOffer = () => {
                         const imagePath = item.imagePath?._path || "No image path found";
                         const prattle = item.preTitle || "No prattle found";
                         const title = item.title || "No title found";
+                        const ctaButtonText = item.ctaButtonText || "No Button Label found";
                         const shortDescriptionHtml = item.shortDescription?.html || "No short description HTML found";
                     
                         // Log the extracted values
@@ -43,6 +44,7 @@ const AdobeTargetOffer = () => {
                         console.log("Image Path:", imagePath);
                         console.log("Prattle:", prattle);
                         console.log("Title:", title);
+                        console.log("CTAButtonText:", ctaButtonText);
                         console.log("Short Description (HTML):", shortDescriptionHtml);
                     } else {
                         console.error("Could not find the required item in the JSON response.");
