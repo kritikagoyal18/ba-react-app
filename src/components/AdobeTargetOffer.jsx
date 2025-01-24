@@ -47,8 +47,58 @@ const AdobeTargetOffer = () => {
                         console.log("CTAButtonText:", ctaButtonText);
                         console.log("Short Description (HTML):", shortDescriptionHtml);
 
-                        document.getElementById("reactapp-mbox").innerHTML = "<img src="+'https://publish-p148716-e1519766.adobeaemcloud.com/'+imagePath+" />";
-                      
+                       // document.getElementById("reactapp-mbox").innerHTML = "<img src="+'https://publish-p148716-e1519766.adobeaemcloud.com/'+imagePath+" />";
+                        const offerHtml = `
+                        <div style="
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            padding: 20px;
+                            background-color: #f9f9f9;
+                            border: 1px solid #ddd;
+                            border-radius: 8px;
+                            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                            margin-bottom: 20px;">
+                            <div style="flex: 1; max-width: 300px; margin-right: 20px;">
+                                <img 
+                                    src="+'https://publish-p148716-e1519766.adobeaemcloud.com/'+imagePath+" 
+                                    alt="${title}" 
+                                    style="width: 100%; border-radius: 8px;" 
+                                />
+                            </div>
+                            <div style="flex: 2;">
+                                <p style="font-style: italic; color: #666; margin-bottom: 10px;">
+                                    ${prattle}
+                                </p>
+                                <h1 style="font-size: 24px; font-weight: bold; color: #333; margin-bottom: 10px;">
+                                    ${title}
+                                </h1>
+                                <div style="margin-bottom: 10px; color: #555; line-height: 1.5;">
+                                    ${descriptionHtml}
+                                </div>
+                                <div style="margin-bottom: 20px; color: #555; line-height: 1.5;">
+                                    ${shortDescriptionHtml}
+                                </div>
+                                <button 
+                                    style="
+                                        padding: 10px 20px;
+                                        background-color: #007bff;
+                                        color: #fff;
+                                        border: none;
+                                        border-radius: 4px;
+                                        font-size: 16px;
+                                        cursor: pointer;
+                                        text-transform: uppercase;">
+                                    ${ctaButtonText}
+                                </button>
+                            </div>
+                        </div>
+                    `;
+
+                    // Set the HTML inside the div
+                    const mboxDiv = document.getElementById('reactapp-mbox');
+                    if (mboxDiv) {
+                        mboxDiv.innerHTML = offerHtml;
                     } else {
                         console.error("Could not find the required item in the JSON response.");
                     }
