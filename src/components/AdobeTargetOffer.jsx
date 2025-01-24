@@ -2,21 +2,18 @@ import React, { useEffect } from 'react';
 
 const AdobeTargetOffer = () => {
     useEffect(() => {
-
         
-            // Ensure Adobe Target is available
-            if (!window.adobe || !window.adobe.target) {
-                console.error("Adobe Target is not initialized.");
-                return;
-            }else{
-              console.error("Adobe Target is initialized.");
-            }
-    
             // Function to fetch and render the offer
             const fetchAndRenderOffer = () => {
                 console.log("fetching offer");
                 
-                
+                // Ensure Adobe Target is available
+                if (!window.adobe || !window.adobe.target) {
+                    console.error("Adobe Target is not initialized.");
+                    return;
+                } else{
+                  console.error("Adobe Target is initialized.");
+                }
                 
                 window.adobe.target.getOffers({
                   request: {
@@ -47,8 +44,7 @@ const AdobeTargetOffer = () => {
                   });
                 });
                 
-               /*
-                
+                /*
                 window.adobe.target.getOffer({
                     "mbox": "target-global-mbox",
                     "params": {
@@ -71,15 +67,11 @@ const AdobeTargetOffer = () => {
                     "error": function(status, error) {
                         console.error("Failed to fetch offer:", status, error);
                     }
-                  });
+                });
                 */
-            
-        };
-    
-
-                
-        // Fetch and render the offer when the component mounts
-        fetchAndRenderOffer;
+            };  
+            // Fetch and render the offer when the component mounts
+            setTimeout(fetchAndRenderOffer, 2000);
   
     }, []); // Empty dependency array ensures this runs only once when the component mounts
  
