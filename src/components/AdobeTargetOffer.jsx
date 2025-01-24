@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import "./AdobeTargetoffer.scss";
+import "./AdobeTargetOffer.scss";
 
 const AdobeTargetOffer = () => {
     useEffect(() => {
