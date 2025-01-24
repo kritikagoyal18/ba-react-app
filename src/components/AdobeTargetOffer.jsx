@@ -29,6 +29,26 @@ const AdobeTargetOffer = () => {
                 })
                 .then(response => {
                   // get all mboxes from response
+                  const item = response?.prefetch?.mboxes?.[0]?.options?.[0]?.content?.data?.offersByPath?.item;
+
+                  if (item) {
+                        const descriptionHtml = item.description?.html || "No description HTML found";
+                        const imagePath = item.imagePath?._path || "No image path found";
+                        const prattle = item.preTitle || "No prattle found";
+                        const title = item.title || "No title found";
+                        const shortDescriptionHtml = item.shortDescription?.html || "No short description HTML found";
+                    
+                        // Log the extracted values
+                        console.log("Description (HTML):", descriptionHtml);
+                        console.log("Image Path:", imagePath);
+                        console.log("Prattle:", prattle);
+                        console.log("Title:", title);
+                        console.log("Short Description (HTML):", shortDescriptionHtml);
+                    } else {
+                        console.error("Could not find the required item in the JSON response.");
+                    }
+
+                    /*
                   const mboxes = response.prefetch.mboxes;
                   let count = 1;
                 
@@ -41,7 +61,7 @@ const AdobeTargetOffer = () => {
                         }
                       }
                     });
-                  });
+                  });*/
                 });
                 
                 /*
